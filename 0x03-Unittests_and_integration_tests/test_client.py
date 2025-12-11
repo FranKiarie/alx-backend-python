@@ -32,7 +32,7 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_public_repos_url(self):
         """Test that _public_repos_url returns the expected value"""
         test_payload = {"repos_url": "https://api.github.com/orgs/test/repos"}
-        
+
         with patch.object(
             GithubOrgClient,
             'org',
@@ -78,7 +78,9 @@ class TestGithubOrgClient(unittest.TestCase):
 
 
 try:
-    from fixtures import org_payload, repos_payload, expected_repos, apache2_repos
+    from fixtures import (
+        org_payload, repos_payload, expected_repos, apache2_repos
+    )
     FIXTURES = [{
         "org_payload": org_payload,
         "repos_payload": repos_payload,
